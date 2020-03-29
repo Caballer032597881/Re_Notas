@@ -100,5 +100,17 @@ namespace Win.RegistroNotas
         {
             Application.Exit();
         }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reporteDeTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReporteTransaccion = new FormReporteTransaccion ();
+            formReporteTransaccion.MdiParent = this;
+            formReporteTransaccion.Show();
+        }
     }
 }

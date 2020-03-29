@@ -11,27 +11,20 @@ using System.Windows.Forms;
 
 namespace Win.RegistroNotas
 {
-    public partial class FormReporteA : Form
+    public partial class FormReporteTransaccion : Form
     {
-        public FormReporteA()
+        public FormReporteTransaccion()
         {
             InitializeComponent();
-
-            var _productoBL = new AlumnosBL();
+            var _transaccionBL = new TransaccionBL();
             var bindingSource = new BindingSource();
-            bindingSource.DataSource = _productoBL.ObtenerAlumnos();
+            bindingSource.DataSource = _transaccionBL.ObtenerTransacciones();
 
-            var reporte = new ReporteAlumnos();
+            var reporte = new ReporteTransaccion();
             reporte.SetDataSource(bindingSource);
 
             crystalReportViewer1.ReportSource = reporte;
             crystalReportViewer1.RefreshReport();
-
-        }
-
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
